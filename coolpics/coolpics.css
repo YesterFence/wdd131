@@ -1,0 +1,101 @@
+:root
+{
+    /* --banner-color: rgb(100, 3, 255); */
+    --banner-color: #52489c;
+    --secondary-color: #59c3c3;
+    --text-color: #ebebeb;
+    --text-dark: #333;
+    --accent-color: #f45b69;
+    --primanry-font: Arial, Helvetica, sans-serif;
+    --secondary-font: Mooli, san-serif;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: grid;
+    font-size: 1.2em;
+    font-family: var(--font-family);
+    margin: auto;
+}
+
+header
+{
+    color: var(--text-color);
+    background-color: var(--banner-color);
+    padding: 20px;
+    text-align: center;
+}
+header h1
+{
+    margin: 10px;
+}
+
+main
+{
+    padding: 20px;
+}
+main h2
+{
+    text-align: center;
+    padding: 1em;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+.gallery figure {
+    margin: 1em;
+}
+
+.gallery img {
+    height: 250px;
+    object-fit: contain;
+    object-position: center;
+    border: 10px solid var(--text-color);
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+    align-self: center;
+}
+
+footer
+{
+    bottom: 0;
+    width: 100%;
+    color: var(--text-color);
+    background-color: var(--banner-color);
+    padding: 20px;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+a:link, a:visited 
+{
+  color: var(--accent-color);
+}
+
+@media screen and (min-width: 700px)
+{
+    .gallery
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1000px)
+{
+    .gallery
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }    
+}
