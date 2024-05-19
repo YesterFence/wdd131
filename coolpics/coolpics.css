@@ -6,7 +6,7 @@
     --text-color: #ebebeb;
     --text-dark: #333;
     --accent-color: #f45b69;
-    --primanry-font: Arial, Helvetica, sans-serif;
+    --primary-font: Arial, Helvetica, sans-serif;
     --secondary-font: Mooli, san-serif;
 }
 
@@ -15,6 +15,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.hide {
+	display: none;
+}
+.viewer
+{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: grid;
+    place-items: center;
+}
+.close-viewer
+{
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.viewer img
+{
+    max-height: 100%;
+    /* max-width: 100%; */
 }
 
 body
