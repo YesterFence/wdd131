@@ -23,34 +23,82 @@ const articles = [
       ages: "12-16",
       genre: "Fantasy",
       stars: "⭐⭐⭐⭐"
+    },
+    {
+      id: 3,
+      title: "Belgariad Book One: Pawn of Prophecy",
+      date: "Feb 12, 2022",
+      description:
+      "A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.",
+      imgSrc:
+      "https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
+      imgAlt: "Book cover for Pawn of Prophecy",
+      ages: "12-16",
+      genre: "Fantasy",
+      stars: "⭐⭐⭐⭐⭐"
     }
-  ];
+];
 
+const articlesContainer = document.querySelector('.articles');
 
-const mainElement = document.querySelector('main');
+function columnContent(content) {
+    const article = document.createElement('div');
+    article.classList.add('article');
 
-articles.forEach(article => {
-    const info = document.createElement('info');
-    const book = document.createElement('book');
-
-    info.classList.add('info');
-    book.classList.add('book');
-
-    info.innerHTML = 
-    `
-      <p>${article.date}</p>
-      <p>${article.ages}</p>
-      <p>${article.genre}</p>
-      <p<${article.stars}</p>
-    `;
-    
-    book.innerHTML = 
-    `
-      <h2>${article.title}</h2>
-      <img src="${article.imgSrc}" alt="${article.imgAlt}">
-      <p>${article.description}</p>
+    const contentLeft = document.createElement('div');
+    contentLeft.classList.add('info');
+    contentLeft.innerHTML = `
+        <p>${content.date}</p>
+        <p>${content.ages}</p>
+        <p>${content.genre}</p>
+        <p>${content.stars}</p>
     `;
 
-    mainElement.appendChild(info);
-    mainElement.appendChild(book)
-});
+    const middleBorder = document.createElement('div');
+    middleBorder.classList.add('middle-border');
+
+    const contentMidd = document.createElement('div');
+    contentMidd.classList.add('book');
+    contentMidd.innerHTML = `
+        <h2>${content.title}</h2>
+        <img src="${content.imgSrc}">
+        <p>${content.description}</p>
+    `;
+
+    article.appendChild(contentLeft);
+    article.appendChild(middleBorder);
+    article.appendChild(contentMidd);
+    articlesContainer.appendChild(article);
+}
+
+articles.forEach(content => {columnContent(content);});
+
+
+// articles.forEach(columnContent);
+
+// const leftSide = document.querySelector('.info');
+// const middSide = document.querySelector('.book');
+// const righSide = document.querySelector('.filter');
+
+// function columnContent(content)
+// {
+//   const contentLeft = document.createElement('div');
+//   contentLeft.innerHTML = `
+//   <p>${content.date}</p>
+//   <p>${content.ages}</p>
+//   <p>${content.genre}</p>
+//   <p>${content.stars}</p>
+//   `;
+
+//   const contentMidd = document.createElement('div');
+//   contentMidd.innerHTML = `
+//   <p>${content.title}</p>
+//   <img src="${content.imgSrc}">
+//   <p>${content.description}</p>
+//   `;
+
+//   leftSide.appendChild(contentLeft);
+//   middSide.appendChild(contentMidd);
+// }
+
+// articles.forEach(content => {columnContent(content);});
