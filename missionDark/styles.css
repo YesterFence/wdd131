@@ -1,0 +1,47 @@
+body 
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 150px;
+    line-height: 1.5;
+    border: 1px solid;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.dark
+{
+    background-color: #333;
+    color: white;
+}
+
+.dark h2
+{
+    color: rgb(160, 212, 237);
+}
+
+header {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header h2 {
+    font-size: large;
+    color: #006EB6;
+    border-bottom: 1px solid;
+}
+
+footer
+{
+    align-self: center;
+}
+
+img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: bottom;
+    max-width: 150px;
+}
