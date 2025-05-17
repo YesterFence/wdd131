@@ -1,0 +1,5 @@
+Pseudo Code:
+1. Ask for user input and store it.
+2. create a divider with the input, an have two other functions inside
+3. When hit the checkmark box, cross out the entire divider
+4. When you hit the Delete box, just deletes the divider

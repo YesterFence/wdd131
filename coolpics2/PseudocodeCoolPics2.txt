@@ -1,0 +1,22 @@
+when user clicks menu button show and hide the menu:
+    Target the menu button (querySelector)
+    Target the menu links (querySelector)
+    Listen for the click event (.addEventLIstener)
+    When it's clicked, show the menu if it's hidden and hide it if it's showing
+        (Add a class to CSS .hide {display: none;})
+        (function from event using .class ... )
+
+when user clicks an image show a modal with the same image inside it:
+    Targetthe whole gallery (querySelector)
+    Create the modal (.createElement('dialog'))
+    Add the empty image to the modal (a template literal with <<img>)
+    Add button to close the modal (also in the template literal)
+    Place the modal on the page (they are hidden by default)(.appendChild)
+    Target the image and close button in the modal (.querySelector)
+    When the user clicks an image (.addEventListener for the whole gallery)
+        Find out which image they clicked (use event parameter with target.closest)
+        Take name of file, use that to get high def version file (.split)
+        Place image into the new modal (.setAttribute or src and alt)
+        Show modal (.showModal())
+
+        .close() when click
