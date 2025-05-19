@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="coolpics.css">
 </head>
 
-<!-- Need to make 'Menu' a button without looking like a button -->
-<!-- Need to add shadowbox for pictures -->
 <body>
     <header>
         <h1>Cool Pics 📷</h1>
-        <button class="menuButton" href="index.html">Menu</button>
-        <!-- <h4>Menu</h4> -->
-         <!-- Make the Menu to expand the links -->
-        <div class="links hide"> 
+        <button class="menuButton" id="menuToggle">Menu</button>
+        <div class="links hide" id="headLinks"> 
             <a href="#">Home</a>
             <a href="#">People</a>
             <a href="#">Places</a>
@@ -59,7 +55,7 @@
 
     <footer>
         <div class="enhance hide"> <!--viewer-->
-            <img class="enhance-img" src="" alt="Big Image">
+            <!-- <img class="enhance-img" src="" alt="Big Image"> -->
             <button class='close-enhance'>X</button>
         </div>
 
