@@ -1,0 +1,221 @@
+body 
+{
+    background-color: #ffb242;
+    font-family: lato, 'helvetica-light';
+    position: relative;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+.main-grid
+{
+    display: grid;
+    /* border: black solid; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-width: 1000px;
+    max-height: 600px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    position: relative;
+}
+
+.front-card
+{
+    /* border: black solid; */
+    background: green;
+    color: white;
+    display: grid;
+    width: 390px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px grey;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+#image-container 
+{
+    /* border: black solid; */
+    width: 100%;
+    position: relative;
+    height: 55px;
+    margin-bottom: 5px;
+    line-height: 55px;
+}
+
+label 
+{
+    display: block;
+    margin: 0 auto 7px;
+}
+
+.card-image
+{
+    /* border: black solid; */
+    margin-right:0;
+    margin-left: auto;
+    display:block;
+}
+
+.number-card 
+{
+    /* border: black solid; */
+    grid-column: 1 / -1; 
+    grid-row: 2; 
+}
+#card-number
+{
+    width: 100%;
+}
+input[id="card-number"] 
+{
+    border: none;
+    outline: none;
+    background-color: lightgreen;
+    height: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    letter-spacing: .7px;
+}
+
+#cardholder-container
+{
+    /* border: black solid; */
+}
+input[id="card-holder"] 
+{
+    border: none;
+    outline: none;
+    background-color: lightgreen;
+    height: 30px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    letter-spacing: .7px;
+}
+
+/* #exp-container
+{
+ border: black solid;
+} */
+#card-month 
+{
+    height: 30px;
+    width: 40% !important;
+    background-color: lightgreen;
+}
+#card-year 
+{
+    height: 30px;
+    width: 40%;
+    background-color: lightgreen;
+    float: right;
+}
+
+/* Behind Card */
+
+.back-card {
+    /* border: solid black; */
+    background: green;
+    position: absolute;
+    top: 100px;
+    left: 140px; 
+    z-index: -1;
+    display: grid;
+    border-radius: 6px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px grey;
+    grid-template-columns: 7fr 1fr;
+    grid-template-rows: 5fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    width: 390px;
+    height: 250px;
+    padding: 20px;
+}
+#cvc-container
+{
+    grid-column: 2; 
+    grid-row: 2;
+}
+#cvc-container label {
+    width: 100%;
+}
+#card-cvc {
+    width: 60px;
+    margin-bottom: 0;
+    z-index: 10;
+}
+#cvc-container p {
+    font-size: 6px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    letter-spacing: .5px;
+}
+input[id="card-cvc"] 
+{
+    border: none;
+    outline: none;
+    background-color: lightgreen;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    margin: 0 0 25px;
+    color: white;
+    font-size: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: lato, 'helvetica-light', 'sans-serif';
+    letter-spacing: .7px;
+}
+#card-stripe {
+    width: 100%;
+    height: 55px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+}
+.button-container {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: end; /* Align the button at the bottom */
+    z-index: 1;
+}
+
+#card-btn {
+    background-color: rgba(251, 251, 251, 0.8);
+    color: #ffb242;
+    width: 150px;
+    border-radius: 8px;
+    height: 42px;
+    font-size: 12px;
+    font-family: lato, 'helvetica-light', 'sans-serif';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+form {
+  display: grid;
+  gap: 1rem; /* ensures vertical spacing */
+}
+
+p.errorMsg {
+    grid-column: 1; 
+    grid-row: 2;
+    text-align: center;
+    align-content: end;
+    
+}
