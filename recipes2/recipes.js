@@ -282,6 +282,40 @@ const recipes = [
 
 // Variables
 let randomNum = Math.floor(Math.random() * recipes.length);
+const recipe = recipes[randomNum];
+let searchButton = document.querySelector('#search-button')
+
+searchButton.addEventListener('click', function()
+{
+	// let recipeContainer = document.querySelector('.recipe');
+	// recipeContainer.innerHTML = '';
+	let string = document.querySelector('#search-input').value.toLowerCase();
+
+	let filterRecipes = recipes.filter(function(recipe)
+	{
+		return(
+			recipe.name.toLowerCase().includes(string.toLowerCase()) ||
+			recipe.description.toLowerCase().includes(string.toLowerCase()) ||
+			recipe.tags.find((tag) => tag.toLowerCase().includes(string.toLowerCase()))
+		);
+	})
+	
+	const sorted = filterRecipes.sort((a, b) => {
+		if (a.name < b.name) return -1
+		if (a.name > b.name) return 0
+		return 0
+	})
+
+	document.querySelector('#recipe-container').innerHTML = '';
+
+	sorted.forEach(function(recipe)
+	{
+		
+		document.querySelector('#recipe-container').innerHTML += recipeTemplate(recipe);
+		// renderRecipes(recipe);
+	})
+})
+
 
 function showRecipe(list)
 {
@@ -292,18 +326,21 @@ function showRecipe(list)
 }
 
 function recipeTemplate(recipe) {
-	return `<figure class="recipe">
-	<img src="images/apple-crisp.jpg" alt="image of apple crisp on a plate" />
+	return `
+	<figure class="recipe">
+	<div class="recipe-image">
+		<img src="${recipe.image}" alt="image of ${recipe.name}" />
+	</div>
 	<figcaption>
-		<ul class="recipe__tags">
+		<ul class="recipe-tags">
 			${tagsTemplate(recipe.tags)}
 		</ul>
 		<h2>${recipe.name}</h2>
-		<p class="recipe__ratings">
-			${ratingTemplate(recipes.rating)}
+		<p class="recipe-ratings">
+			${ratingTemplate(recipe.rating)}
 		</p>
-		<p class="recipe__description">
-			${recipes.description}
+		<p class="recipe-description">
+			${recipe.description}
 		</p>
 </figcaption>
 </figure>`;
@@ -322,7 +359,7 @@ function ratingTemplate(rating)
 	let html = `<span
 	class="rating"
 	role="rating"
-	aria-lable="Rating: ${rating} out of 5 stars:
+	aria-label="Rating: ${rating} out of 5 stars:
 	>`
 
 	// our ratings are always out of 5, so create a for loop from 1 to 5
@@ -347,25 +384,23 @@ function ratingTemplate(rating)
 	return html
 }
 
-const recipe = getRandomListEntry(recipes);
-console.log(recipeTemplate(recipe));
-
 
 function renderRecipes(recipeList) {
 	// get the element we will output the recipes into
 	let recipeContainer = document.querySelector('#recipe-container');
 	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
-	let html = recipesTemplate(recipeList);
+	let html = recipeTemplate(recipeList);
 	// Set the HTML strings as the innerHTML of our output element.
 	recipeContainer.innerHTML += html;
 }
 
-function init() {
-  // get a random recipe
-  const recipe = getRandomListEntry(recipes)
-  // render the recipe with renderRecipes.
-  renderRecipes(recipes[randomNum]);
-}
-init();
+// function init() {
+//   // get a random recipe
+//   const recipe = getRandomListEntry(recipes)
+//   // render the recipe with renderRecipes.
+//   renderRecipes(recipe[randomNum]);
+// }
 
-renderRecipes(recipes[randomNum]);
+// init();
+
+renderRecipes(recipe);
