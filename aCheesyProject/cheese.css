@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
+
+:root
+{
+    --primary-color: #325871   ;
+    --secondary-color: #FFC66C ;
+    --accent1-color: #BB0A21;
+    --accent2-color: #FF6E37;
+    --other-color:  rgba(20,30,13, .7);
+
+    --heading-font: "Secular One";
+    --paragraph-font: Georgia, serif;
+
+    --headline-color-on-white: #325871;  /* headlines on a white background */ 
+    --headline-color-on-color: #FFEDE5; /* headlines on a colored background */ 
+    --paragraph-color-on-white: #325871; /* paragraph text on a white background */ 
+    --paragraph-color-on-color: #FFEDE5; /* paragraph text on a colored background */ 
+    --paragraph-background-color: #325871;
+    --nav-link-color: #BB0A21;
+    --nav-background-color: #FFC66C;
+    --nav-hover-link-color: #FFEDE5;
+    --nav-hover-background-color: #FF6E37;
+}
+
+header {
+    display: grid;
+    border: 5px solid var(--nav-link-color);
+    grid-template-columns: 150px auto;
+    background-color: rgba(20,30,13, .7);
+}
+
+body
+{
+    display: grid;
+    background-color: var(--nav-background-color);
+    max-width: 1600px;
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+.cheese1, .cheese2, .cheese3
+{
+    position: relative;
+    border: 10px solid var(--accent2-color);
+    width: 95%;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+    align-self: center;
+}
+
+p
+{
+    color: white; /* Sets the text fill color to white */
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+
+}
