@@ -8,48 +8,56 @@
     <link rel="stylesheet" href="cheese.css">
     <script src="cheese.js" defer></script>
 </head>
-<header>
-    <a id="logo_link" href="cheese-home.html">
-        <img class="logo" src="Images/Cheese-Logo.jpg"  alt="Cheese-Logo">
-    </a>
-</header>
+
 <body>
-    <div class="cheese1">
-        <h2>american</h2>
-        <img src="Images/rsz_american.png">
-        <p>$3.50</p>
-        <div id="quantity">
-            <p>Quantity</p>
-            <button>+</button>
-            <button>-</button>
+    <header>
+        <a id="logo_link" href="/aCheesyProject/cheese.html">
+            <img class="logo" src="Images/Cheese-Logo.jpg"  alt="Cheese-Logo">
+        </a>
+
+        <div id="selecting">
+            <h1>
+                Purchase Cheese!
+            </h1>
+            <br>
+            <p>Cheese Sort...</p>
+            <select id="sortCheeses" onchange="dropDown()">
+                <option value="default">Default</option>
+                <option value="alphabetical">Sort: A to Z</option>
+                <option value="priceLow">Price: Low to High</option>
+                <option value="priceHigh">Price: High to Low</option>
+            </select>
         </div>
-    </div>
-    <div class="cheese2">
-        <h2>gouda</h2>
-        <img src="Images/rsz_gouda.jpg">
-        <p>$3.50</p>
-        <div id="quantity">
-            <p>Quantity</p>
-            <button>+</button>
-            <button>-</button>
-        </div>
-    </div>
-    <div class="cheese3">
-        <h2>coblyjack</h2>
-        <img src="Images/rsz_colbyjack.jpg">
-        <p>$3.50</p>
-        <div id="quantity">
-            <p>Quantity</p>
-            <button>+</button>
-            <button>-</button>
-        </div>
-    </div>
+    </header>
     
+    <main>
+        <div id="cheese-container">
+        </div>
+
+        <div id="checkOut">
+            <button id="checkoutButton" onclick="openReceipt()">🧀 Check out 🧀</button>
+        </div>
+    </main>
+
+<!-- Receipt Modal -->
+<div id="receipt-modal" class="modal hidden">
+    <div class="modal-content">
+        <div class="receiptTop">
+            <img class="receiptLogo" src="Images/Cheese-Logo.jpg"  alt="Cheese-Logo">
+            <h2>Your Cheese Receipt</h2>
+        </div>
+        <div id="receipt-list"></div>
+        <div id="receipt-total" class="total-line"></div>
+        <button onclick="closeReceipt()">Close</button>
+    </div>
+</div>
+
+
 </body>
 <footer>
     <p>Cheese Loise&copy; 2023 - Ryan Lee</p>
-        <p><a href="siteplan.html">Site Plan</a></p>
-        <p><a href="cheese-contact.html">Contact Us</a></p>
+        <p><a href="/aCheesyProject/site-plan.html">Site Plan</a></p>
+        <p><a href="/blog2/index.html">Contact Us</a></p>
     
         <div class="social">
         <a href="https://facebook.com"> <img src="https://byui-wdd.github.io/wdd130/rafting_images/facebook.png" alt="fb icon"></a>
